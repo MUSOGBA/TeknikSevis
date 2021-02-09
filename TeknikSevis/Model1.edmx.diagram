@@ -31,6 +31,8 @@
         <AssociationConnector Association="DbTeknikServisModel.FK_TBLURUNKABUL_TBLPERSONEL" ManuallyRouted="false" />
         <AssociationConnector Association="DbTeknikServisModel.FK_TBLURUNHAREKET_TBLURUN" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DbTeknikServisModel.TBLURUNTAKIP" Width="1.5" PointX="8.75" PointY="13.75" />
+        <EntityTypeShape EntityType="DbTeknikServisModel.TBLHAKKIMIZDA" Width="1.5" PointX="11.375" PointY="11.75" />
+        <EntityTypeShape EntityType="DbTeknikServisModel.TBLILETISIM" Width="1.5" PointX="12.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

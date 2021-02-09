@@ -262,7 +262,7 @@ namespace TeknikSevis
         Formlar.FrmFaturaListesi fr23;
         private void BtnFaturaListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (fr23==null||fr23.IsDisposed)
+            if (fr23 == null || fr23.IsDisposed)
             {
                 fr23 = new Formlar.FrmFaturaListesi();
                 fr23.MdiParent = this;
@@ -273,12 +273,47 @@ namespace TeknikSevis
         Formlar.FrmFaturaKalem fr24;
         private void BtnFaturaKalem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (fr24==null||fr24.IsDisposed)
+            if (fr24 == null || fr24.IsDisposed)
             {
                 fr24 = new Formlar.FrmFaturaKalem();
                 fr24.MdiParent = this;
                 fr24.Show();
             }
+        }
+
+        Formlar.FrmFaturaDetaySorgulama fr25;
+        private void BtnDetayliFaturaSorgulama_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (fr25 == null || fr25.IsDisposed)
+            {
+                fr25 = new Formlar.FrmFaturaDetaySorgulama();
+                fr25.MdiParent = this;
+                fr25.Show();
+            }
+        }
+
+        Formlar.FrmGauge fr26;
+        private void BtnGauge_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (fr26==null||fr26.IsDisposed)
+            {
+                fr26 = new Formlar.FrmGauge();
+                fr26.MdiParent = this;
+                fr26.Show();
+            }
+        }
+
+        Formlar.FrmHaritalar fr27;
+        private void BtnHaritalar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (fr27==null||fr27.IsDisposed)
+            {
+                fr27 = new Formlar.FrmHaritalar();
+                fr27.MdiParent = this;
+                fr27.Show();
+            }
+
+
         }
     }
 }

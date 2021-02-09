@@ -41,5 +41,7 @@ namespace TeknikSevis
         public virtual DbSet<TBLURUNHAREKET> TBLURUNHAREKET { get; set; }
         public virtual DbSet<TBLURUNKABUL> TBLURUNKABUL { get; set; }
         public virtual DbSet<TBLURUNTAKIP> TBLURUNTAKIP { get; set; }
+        public virtual DbSet<TBLHAKKIMIZDA> TBLHAKKIMIZDA { get; set; }
+        public virtual DbSet<TBLILETISIM> TBLILETISIM { get; set; }
     }
 }
