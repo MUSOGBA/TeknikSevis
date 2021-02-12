@@ -132,6 +132,7 @@
           <Property Name="BASLIK" Type="varchar" MaxLength="50" />
           <Property Name="ICERIK" Type="varchar" MaxLength="500" />
           <Property Name="DURUM" Type="bit" />
+          <Property Name="TARIH" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="TBLPERSONEL">
           <Key>
@@ -275,18 +276,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBLURUNHAREKET_TBLURUN">
-          <End Role="TBLURUN" Type="Self.TBLURUN" Multiplicity="0..1" />
-          <End Role="TBLURUNHAREKET" Type="Self.TBLURUNHAREKET" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBLURUN">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TBLURUNHAREKET">
-              <PropertyRef Name="URUN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TBLURUNKABUL_TBLCARI">
           <End Role="TBLCARI" Type="Self.TBLCARI" Multiplicity="0..1" />
           <End Role="TBLURUNKABUL" Type="Self.TBLURUNKABUL" Multiplicity="*" />
@@ -311,6 +300,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="makskategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="urunkategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DbTeknikServisModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLADMIN" EntityType="Self.TBLADMIN" Schema="dbo" store:Type="Tables" />
@@ -356,10 +347,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_TBLURUNHAREKET_TBLPERSONEL" Association="Self.FK_TBLURUNHAREKET_TBLPERSONEL">
             <End Role="TBLPERSONEL" EntitySet="TBLPERSONEL" />
-            <End Role="TBLURUNHAREKET" EntitySet="TBLURUNHAREKET" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBLURUNHAREKET_TBLURUN" Association="Self.FK_TBLURUNHAREKET_TBLURUN">
-            <End Role="TBLURUN" EntitySet="TBLURUN" />
             <End Role="TBLURUNHAREKET" EntitySet="TBLURUNHAREKET" />
           </AssociationSet>
           <AssociationSet Name="FK_TBLURUNKABUL_TBLCARI" Association="Self.FK_TBLURUNKABUL_TBLCARI">
@@ -494,6 +481,7 @@
           <Property Name="BASLIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ICERIK" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="DURUM" Type="Boolean" />
+          <Property Name="TARIH" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="TBLPERSONEL">
           <Key>
@@ -734,6 +722,8 @@
           <EntitySet Name="TBLURUNTAKIP" EntityType="DbTeknikServisModel.TBLURUNTAKIP" />
           <EntitySet Name="TBLHAKKIMIZDA" EntityType="DbTeknikServisModel.TBLHAKKIMIZDA" />
           <EntitySet Name="TBLILETISIM" EntityType="DbTeknikServisModel.TBLILETISIM" />
+          <FunctionImport Name="urunkategori" ReturnType="Collection(DbTeknikServisModel.urunkategori_Result)" />
+          <FunctionImport Name="makskategori" ReturnType="Collection(String)" />
         </EntityContainer>
         <EntityType Name="TBLURUNTAKIP">
           <Key>
@@ -761,6 +751,10 @@
           <Property Name="KONU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MESAJ" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="urunkategori_Result">
+          <Property Type="String" Name="AD" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="ADET" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -882,6 +876,7 @@
           <EntitySetMapping Name="TBLNOTLARIM">
             <EntityTypeMapping TypeName="DbTeknikServisModel.TBLNOTLARIM">
               <MappingFragment StoreEntitySet="TBLNOTLARIM">
+                <ScalarProperty Name="TARIH" ColumnName="TARIH" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="BASLIK" ColumnName="BASLIK" />
                 <ScalarProperty Name="ICERIK" ColumnName="ICERIK" />
@@ -971,6 +966,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="urunkategori" FunctionName="DbTeknikServisModel.Store.urunkategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DbTeknikServisModel.urunkategori_Result">
+                <ScalarProperty Name="AD" ColumnName="AD" />
+                <ScalarProperty Name="ADET" ColumnName="ADET" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="makskategori" FunctionName="DbTeknikServisModel.Store.makskategori" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

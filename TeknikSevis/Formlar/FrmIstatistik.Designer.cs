@@ -449,13 +449,13 @@
             // 
             // labelControl15
             // 
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl15.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.labelControl15.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl15.Appearance.Options.UseFont = true;
             this.labelControl15.Appearance.Options.UseForeColor = true;
             this.labelControl15.Location = new System.Drawing.Point(27, 62);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(54, 45);
+            this.labelControl15.Size = new System.Drawing.Size(36, 30);
             this.labelControl15.TabIndex = 0;
             this.labelControl15.Text = "584";
             // 
@@ -961,7 +961,7 @@
             this.Controls.Add(this.panel20);
             this.Controls.Add(this.panel1);
             this.Name = "FrmIstatistik";
-            this.Text = "FrmIstatistik";
+            this.Text = "İstatistikler";
             this.Load += new System.EventHandler(this.FrmIstatistik_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

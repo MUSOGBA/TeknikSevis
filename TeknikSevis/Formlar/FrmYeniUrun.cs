@@ -16,7 +16,7 @@ namespace TeknikSevis.Formlar
         {
             InitializeComponent();
         }
-
+        DbTeknikServisEntities db = new DbTeknikServisEntities();
         private void BtnVazgec_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -24,21 +24,21 @@ namespace TeknikSevis.Formlar
 
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            DbTeknikServisEntities db = new DbTeknikServisEntities();
+
             TBLURUN t = new TBLURUN();
-            t.AD = TxtUrunAd.Text;
-            t.MARKA = TxtMarka.Text;
+            t.AD = TxtUrunAd.Text.ToUpper();
+            t.MARKA = TxtMarka.Text.ToUpper();
             t.ALISFIYAT = decimal.Parse(TxtAlisFiyat.Text);
             t.SATISFIYAT = decimal.Parse(TxtSatisFiyat.Text);
-            t.STOK =short.Parse( TxtStok.Text);
-            t.KATEGORI =byte.Parse(TxtKategori.Text.ToString());
+            t.STOK = short.Parse(TxtStok.Text);
+            t.KATEGORI = byte.Parse(lookUpEdit1.EditValue.ToString());
             db.TBLURUN.Add(t);
             db.SaveChanges();
-            MessageBox.Show("Ürün Ekleme İşlemi Başarılı","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("Ürün Ekleme İşlemi Başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
-      
+
 
         private void pictureEdit8_EditValueChanged(object sender, EventArgs e)
         {
@@ -49,6 +49,22 @@ namespace TeknikSevis.Formlar
         private void pictureEdit8_MouseClick(object sender, MouseEventArgs e)
         {
             this.Close();
+        }
+
+        private void TxtUrunAd_EditValueChanged(object sender, EventArgs e)
+        {
+           
+            TxtUrunAd.Focus();
+        }
+
+        private void FrmYeniUrun_Load(object sender, EventArgs e)
+        {
+            lookUpEdit1.Properties.DataSource = (from x in db.TBLKATEGORI
+                                                 select new
+                                                 {
+                                                     x.ID,
+                                                     x.AD
+                                                 }).ToList();
         }
     }
 }

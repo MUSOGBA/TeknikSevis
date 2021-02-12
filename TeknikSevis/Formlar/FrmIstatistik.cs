@@ -30,6 +30,7 @@ namespace TeknikSevis.Formlar
             labelControl17.Text = (from x in db.TBLURUN
                                    orderby x.STOK ascending
                                    select x.AD).FirstOrDefault();
+            labelControl15.Text = db.makskategori().FirstOrDefault();
             
             labelControl13.Text = (from x in db.TBLURUN
                                    orderby x.SATISFIYAT descending
@@ -44,6 +45,7 @@ namespace TeknikSevis.Formlar
                                    select x.MARKA).Distinct().Count().ToString();
             labelControl35.Text = (from x in db.TBLURUN
                                    select x.MARKA).FirstOrDefault();
+            labelControl31.Text = db.TBLURUNKABUL.Count().ToString();
             
 
 

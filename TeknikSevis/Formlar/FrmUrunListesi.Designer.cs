@@ -181,6 +181,7 @@
             // 
             // lookUpEdit1
             // 
+            this.lookUpEdit1.EditValue = "Değer Seçin";
             this.lookUpEdit1.Location = new System.Drawing.Point(124, 211);
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {

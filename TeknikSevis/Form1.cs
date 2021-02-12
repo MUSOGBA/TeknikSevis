@@ -295,7 +295,7 @@ namespace TeknikSevis
         Formlar.FrmGauge fr26;
         private void BtnGauge_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (fr26==null||fr26.IsDisposed)
+            if (fr26 == null || fr26.IsDisposed)
             {
                 fr26 = new Formlar.FrmGauge();
                 fr26.MdiParent = this;
@@ -306,7 +306,7 @@ namespace TeknikSevis
         Formlar.FrmHaritalar fr27;
         private void BtnHaritalar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (fr27==null||fr27.IsDisposed)
+            if (fr27 == null || fr27.IsDisposed)
             {
                 fr27 = new Formlar.FrmHaritalar();
                 fr27.MdiParent = this;
@@ -314,6 +314,37 @@ namespace TeknikSevis
             }
 
 
+        }
+        Formlar.FrmRapor fr28;
+        private void BtnRaporlar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (fr28 == null || fr28.IsDisposed)
+            {
+                fr28 = new Formlar.FrmRapor();
+
+                fr28.Show();
+            }
+        }
+
+        Formlar.FrmAnaSayfa fr29;
+        private void BtnAnaSayfa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (fr29 == null || fr29.IsDisposed)
+            {
+                fr29 = new Formlar.FrmAnaSayfa();
+                fr29.MdiParent = this;
+                fr29.Show();
+            }
+        }
+      
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (fr29 == null || fr29.IsDisposed)
+            {
+                fr29 = new Formlar.FrmAnaSayfa();
+                fr29.MdiParent = this;
+                fr29.Show();
+            }
         }
     }
 }

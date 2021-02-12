@@ -26,6 +26,7 @@ namespace TeknikSevis.Formlar
             TxtMarka.Text = "";
             TxtAlisFiyat.Text = "";
             TxtSatisFiyat.Text= "";
+            lookUpEdit1.EditValue = " ";
             TxtStok.Text = "";
         }
 
@@ -51,7 +52,12 @@ namespace TeknikSevis.Formlar
             // Listele ToList Add Remove
 
             metot1();
-            lookUpEdit1.Properties.DataSource = db.TBLKATEGORI.ToList();
+            lookUpEdit1.Properties.DataSource = (from x in db.TBLKATEGORI
+                                                select new
+                                                {
+                                                    x.ID,
+                                                    x.AD,
+                                                }).ToList();
 
            
         }
@@ -82,13 +88,22 @@ namespace TeknikSevis.Formlar
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            TxtId.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
-            TxtUrunAdi.Text = gridView1.GetFocusedRowCellValue("AD").ToString();
-            TxtMarka.Text = gridView1.GetFocusedRowCellValue("MARKA").ToString();
-            TxtAlisFiyat.Text = gridView1.GetFocusedRowCellValue("ALISFIYAT").ToString();
-            TxtSatisFiyat.Text = gridView1.GetFocusedRowCellValue("SATISFIYAT").ToString();
-            TxtStok.Text = gridView1.GetFocusedRowCellValue("STOK").ToString();
-            lookUpEdit1.Text = gridView1.GetFocusedRowCellValue("KATEGORI").ToString();
+            try
+            {
+                TxtId.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
+                TxtUrunAdi.Text = gridView1.GetFocusedRowCellValue("AD").ToString();
+                TxtMarka.Text = gridView1.GetFocusedRowCellValue("MARKA").ToString();
+                TxtAlisFiyat.Text = gridView1.GetFocusedRowCellValue("ALISFIYAT").ToString();
+                TxtSatisFiyat.Text = gridView1.GetFocusedRowCellValue("SATISFIYAT").ToString();
+                TxtStok.Text = gridView1.GetFocusedRowCellValue("STOK").ToString();
+                lookUpEdit1.Text = gridView1.GetFocusedRowCellValue("KATEGORI").ToString();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("HATA","BİLGİ",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            
                 }
 
         private void BtnSil_Click(object sender, EventArgs e)

@@ -44,11 +44,18 @@ namespace TeknikSevis.Formlar
 
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            TBLKATEGORI k = new TBLKATEGORI();
-            k.AD = TxtKategoriAdi.Text.ToUpper();
-            db.TBLKATEGORI.Add(k);
-            db.SaveChanges();
-            MessageBox.Show("Kategori kayıt işlemi başarılı","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            if (TxtKategoriAdi.Text != "" && TxtKategoriAdi.Text.Length <= 30)
+            {
+                TBLKATEGORI k = new TBLKATEGORI();
+                k.AD = TxtKategoriAdi.Text.ToUpper();
+                db.TBLKATEGORI.Add(k);
+                db.SaveChanges();
+                MessageBox.Show("Kategori kayıt işlemi başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Kategori Adı Boş ve Belirlenen Karakter Sayısından Fazla", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void BtnListele_Click(object sender, EventArgs e)
@@ -69,12 +76,23 @@ namespace TeknikSevis.Formlar
 
         private void BtnSil_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(TxtId.Text.ToUpper());
-            var deger = db.TBLKATEGORI.Find(id);
-            db.TBLKATEGORI.Remove(deger);
-            db.SaveChanges();
-            MessageBox.Show("Kategori Silme İşlemi başarılı","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
+          DialogResult secim=  MessageBox.Show("Kategori Silme İşlemi İçin Emin Misiniz?", "Bilgi", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
+            if (secim==DialogResult.Yes)
+            {
+                int id = int.Parse(TxtId.Text.ToUpper());
+                var deger = db.TBLKATEGORI.Find(id);
+                db.TBLKATEGORI.Remove(deger);
+                db.SaveChanges();
+                MessageBox.Show("Kategori Silme İşlemi Başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Kategori Silme İşlemi İptal Edildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+          
+            
+           
         }
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
