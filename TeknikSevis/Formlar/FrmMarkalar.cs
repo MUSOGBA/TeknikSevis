@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TeknikSevis.Formlar
 {
@@ -19,7 +20,7 @@ namespace TeknikSevis.Formlar
 
         DbTeknikServisEntities db = new DbTeknikServisEntities();
 
-       
+
 
         private void FrmMarkalar_Load(object sender, EventArgs e)
         {
@@ -35,26 +36,33 @@ namespace TeknikSevis.Formlar
             labelControl5.Text = (from x in db.TBLURUN
                                   orderby x.SATISFIYAT descending
                                   select x.MARKA).FirstOrDefault();
-            labelControl7.Text = "BEKO";
-            chartControl1.Series["Series 1"].Points.AddPoint("Beko", 4);
-            chartControl1.Series["Series 1"].Points.AddPoint("Arçelik", 2);
-            chartControl1.Series["Series 1"].Points.AddPoint("Lenovo", 1);
-            chartControl1.Series["Series 1"].Points.AddPoint("Acer", 1);
-            chartControl1.Series["Series 1"].Points.AddPoint("Casper", 1);
-            chartControl1.Series["Series 1"].Points.AddPoint("Siemens", 2);
-            chartControl1.Series["Series 1"].Points.AddPoint("LG", 4);
+            labelControl7.Text = db.maksmarka().FirstOrDefault();
 
-            chartControl2.Series["Kategoriler"].Points.AddPoint("Buzdolabı", 4);
-            chartControl2.Series["Kategoriler"].Points.AddPoint("Laptop", 1);
-            chartControl2.Series["Kategoriler"].Points.AddPoint("Su Isıtıcısı",3 );
-            chartControl2.Series["Kategoriler"].Points.AddPoint("TV",5 );
-            chartControl2.Series["Kategoriler"].Points.AddPoint("Çamaşır Makinası", 4);
-            chartControl2.Series["Kategoriler"].Points.AddPoint("Utu", 3);
-            chartControl2.Series["Kategoriler"].Points.AddPoint("Fırın", 4);
+
+            SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-N5F5PJT;Initial Catalog=DbTeknikServis;Integrated Security=True");
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("SELECT MARKA,COUNT(*) FROM TBLURUN GROUP BY MARKA", baglanti);
+            SqlDataReader dr = komut.ExecuteReader();
+            while (dr.Read())
+            {
+                chartControl1.Series["Series 1"].Points.AddPoint(Convert.ToString(dr[0]), int.Parse(dr[1].ToString()));
+            }
+            baglanti.Close();
+
+            baglanti.Open();
+            SqlCommand komut2 = new SqlCommand("SELECT COUNT(*), TBLKATEGORI.AD FROM TBLURUN INNER JOIN TBLKATEGORI ON TBLKATEGORI.ID = TBLURUN.KATEGORI GROUP BY TBLKATEGORI.AD", baglanti);
+            SqlDataReader dr2 = komut.ExecuteReader();
+            while (dr2.Read())
+            {
+                chartControl2.Series["Kategoriler"].Points.AddPoint(Convert.ToString(dr2[0]), int.Parse(dr2[1].ToString()));
+            }
+            baglanti.Close();
+
             
+
 
         }
 
-      
+
     }
 }

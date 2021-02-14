@@ -453,7 +453,7 @@
             this.labelControl15.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl15.Appearance.Options.UseFont = true;
             this.labelControl15.Appearance.Options.UseForeColor = true;
-            this.labelControl15.Location = new System.Drawing.Point(27, 62);
+            this.labelControl15.Location = new System.Drawing.Point(27, 74);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(36, 30);
             this.labelControl15.TabIndex = 0;

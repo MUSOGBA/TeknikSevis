@@ -301,6 +301,7 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="makskategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="maksmarka" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="urunkategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DbTeknikServisModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -724,6 +725,7 @@
           <EntitySet Name="TBLILETISIM" EntityType="DbTeknikServisModel.TBLILETISIM" />
           <FunctionImport Name="urunkategori" ReturnType="Collection(DbTeknikServisModel.urunkategori_Result)" />
           <FunctionImport Name="makskategori" ReturnType="Collection(String)" />
+          <FunctionImport Name="maksmarka" ReturnType="Collection(String)" />
         </EntityContainer>
         <EntityType Name="TBLURUNTAKIP">
           <Key>
@@ -975,6 +977,7 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="makskategori" FunctionName="DbTeknikServisModel.Store.makskategori" />
+          <FunctionImportMapping FunctionImportName="maksmarka" FunctionName="DbTeknikServisModel.Store.maksmarka" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

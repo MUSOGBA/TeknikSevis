@@ -55,5 +55,10 @@ namespace TeknikSevis
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("makskategori");
         }
+    
+        public virtual ObjectResult<string> maksmarka()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("maksmarka");
+        }
     }
 }
