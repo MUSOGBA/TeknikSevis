@@ -35,7 +35,7 @@ namespace TeknikSevis.Formlar
 
             if (getir != null)
             {
-                TxtMusteriId.Text = getir.TBLCARI.ID.ToString();
+                lookUpEdit1.Text = getir.TBLCARI.ID.ToString();
                 TxtPersonel.Text = getir.TBLPERSONEL.ID.ToString();
                 TxtTarih.Text = getir.TARIH.ToString();
             }
@@ -49,14 +49,24 @@ namespace TeknikSevis.Formlar
         private void BtnKayitOlustur_Click(object sender, EventArgs e)
         {
             TBLURUNKABUL k = new TBLURUNKABUL();
-            k.CARI = int.Parse(TxtMusteriId.Text);
+            k.CARI = int.Parse(lookUpEdit1.Text);
             k.PERSONEL = short.Parse(TxtPersonel.Text);
-            k.GELISTARIH =DateTime.Parse( TxtTarih.Text);
+            k.GELISTARIH = DateTime.Parse(TxtTarih.Text);
             k.URUNSERINO = TxtSeriNo.Text;
             db.TBLURUNKABUL.Add(k);
             db.SaveChanges();
-            MessageBox.Show("Arıza Kayıt İşleminiz Başarılı Bir Şekilde Gerçekleştirilmiştir","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("Arıza Kayıt İşleminiz Başarılı Bir Şekilde Gerçekleştirilmiştir", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void FrmArizaliUrunKaydi_Load(object sender, EventArgs e)
+        {
+            lookUpEdit1.Properties.DataSource = (from x in db.TBLCARI
+                                                 select new
+                                                 {
+                                                     x.ID,
+                                                     ADI = x.AD + " " + x.SOYAD,
+                                                 }).ToList();
         }
     }
 }

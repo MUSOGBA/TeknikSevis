@@ -43,10 +43,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit5 = new DevExpress.XtraEditors.PictureEdit();
-            this.TxtMusteriId = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.TxtTarih = new DevExpress.XtraEditors.TextEdit();
             this.BtnGetir = new System.Windows.Forms.Button();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
@@ -55,9 +55,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtPersonel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtMusteriId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTarih.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureEdit8
@@ -87,7 +87,7 @@
             // 
             // BtnKayitOlustur
             // 
-            this.BtnKayitOlustur.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnAriza.ImageOptions.Image")));
+            this.BtnKayitOlustur.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnKayitOlustur.ImageOptions.Image")));
             this.BtnKayitOlustur.Location = new System.Drawing.Point(66, 418);
             this.BtnKayitOlustur.Name = "BtnKayitOlustur";
             this.BtnKayitOlustur.Size = new System.Drawing.Size(113, 37);
@@ -230,21 +230,6 @@
             this.pictureEdit5.Size = new System.Drawing.Size(32, 32);
             this.pictureEdit5.TabIndex = 56;
             // 
-            // TxtMusteriId
-            // 
-            this.TxtMusteriId.EditValue = "Müşteri ID";
-            this.TxtMusteriId.Location = new System.Drawing.Point(52, 152);
-            this.TxtMusteriId.Name = "TxtMusteriId";
-            this.TxtMusteriId.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.TxtMusteriId.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxtMusteriId.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.TxtMusteriId.Properties.Appearance.Options.UseBackColor = true;
-            this.TxtMusteriId.Properties.Appearance.Options.UseFont = true;
-            this.TxtMusteriId.Properties.Appearance.Options.UseForeColor = true;
-            this.TxtMusteriId.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.TxtMusteriId.Size = new System.Drawing.Size(100, 26);
-            this.TxtMusteriId.TabIndex = 1;
-            // 
             // pictureEdit2
             // 
             this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
@@ -285,12 +270,31 @@
             this.BtnGetir.UseVisualStyleBackColor = true;
             this.BtnGetir.Click += new System.EventHandler(this.BtnGetir_Click);
             // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(52, 151);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lookUpEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lookUpEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.DisplayMember = "ADI";
+            this.lookUpEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.lookUpEdit1.Properties.ValueMember = "ID";
+            this.lookUpEdit1.Size = new System.Drawing.Size(250, 28);
+            this.lookUpEdit1.TabIndex = 67;
+            // 
             // FrmArizaliUrunKaydi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(411, 506);
+            this.Controls.Add(this.lookUpEdit1);
             this.Controls.Add(this.BtnGetir);
             this.Controls.Add(this.pictureEdit8);
             this.Controls.Add(this.BtnVazgec);
@@ -306,13 +310,13 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureEdit3);
             this.Controls.Add(this.pictureEdit5);
-            this.Controls.Add(this.TxtMusteriId);
             this.Controls.Add(this.pictureEdit2);
             this.Controls.Add(this.TxtTarih);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmArizaliUrunKaydi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmArizaliUrunKaydi";
+            this.Load += new System.EventHandler(this.FrmArizaliUrunKaydi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
@@ -321,9 +325,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtPersonel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtMusteriId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTarih.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -344,9 +348,9 @@
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.PictureEdit pictureEdit3;
         private DevExpress.XtraEditors.PictureEdit pictureEdit5;
-        private DevExpress.XtraEditors.TextEdit TxtMusteriId;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private DevExpress.XtraEditors.TextEdit TxtTarih;
         private System.Windows.Forms.Button BtnGetir;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
     }
 }
