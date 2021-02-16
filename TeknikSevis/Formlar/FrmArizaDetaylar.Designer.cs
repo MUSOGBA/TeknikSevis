@@ -31,22 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmArizaDetaylar));
             this.BtnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtSerino = new DevExpress.XtraEditors.TextEdit();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Txttarih = new DevExpress.XtraEditors.TextEdit();
-            this.label4 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureEdit8 = new DevExpress.XtraEditors.PictureEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtSerino.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Txttarih.Properties)).BeginInit();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.TxtTarih = new DevExpress.XtraEditors.TextEdit();
+            this.TxtSeriNo = new DevExpress.XtraEditors.TextEdit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.BtnVazgec = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTarih.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSeriNo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnGuncelle
             // 
             this.BtnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuncelle.ImageOptions.Image")));
-            this.BtnGuncelle.Location = new System.Drawing.Point(37, 359);
+            this.BtnGuncelle.Location = new System.Drawing.Point(37, 430);
             this.BtnGuncelle.Name = "BtnGuncelle";
             this.BtnGuncelle.Size = new System.Drawing.Size(113, 37);
             this.BtnGuncelle.TabIndex = 4;
@@ -64,64 +66,17 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "ARIZALI ÜRÜN KAYDI AÇIKLAMA";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(34, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 15);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "SERİ NO";
-            // 
-            // TxtSerino
-            // 
-            this.TxtSerino.Location = new System.Drawing.Point(37, 112);
-            this.TxtSerino.Name = "TxtSerino";
-            this.TxtSerino.Properties.Mask.EditMask = "AAAAA";
-            this.TxtSerino.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
-            this.TxtSerino.Size = new System.Drawing.Size(127, 20);
-            this.TxtSerino.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(34, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "TARİH";
-            // 
-            // Txttarih
-            // 
-            this.Txttarih.Location = new System.Drawing.Point(37, 171);
-            this.Txttarih.Name = "Txttarih";
-            this.Txttarih.Properties.Mask.EditMask = "d";
-            this.Txttarih.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
-            this.Txttarih.Size = new System.Drawing.Size(127, 20);
-            this.Txttarih.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(34, 208);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "ARIZA DETAYLARI";
-            // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(37, 241);
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(37, 293);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(284, 96);
+            this.richTextBox1.Size = new System.Drawing.Size(284, 115);
             this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = "Arıza Detayları";
+            this.richTextBox1.Click += new System.EventHandler(this.richTextBox1_Click);
             // 
             // pictureEdit8
             // 
@@ -137,28 +92,121 @@
             this.pictureEdit8.TabIndex = 17;
             this.pictureEdit8.Click += new System.EventHandler(this.pictureEdit8_Click);
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Location = new System.Drawing.Point(37, 183);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(250, 3);
+            this.panel5.TabIndex = 60;
+            // 
+            // TxtTarih
+            // 
+            this.TxtTarih.EditValue = "Tarih";
+            this.TxtTarih.Location = new System.Drawing.Point(37, 158);
+            this.TxtTarih.Name = "TxtTarih";
+            this.TxtTarih.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.TxtTarih.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtTarih.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.TxtTarih.Properties.Appearance.Options.UseBackColor = true;
+            this.TxtTarih.Properties.Appearance.Options.UseFont = true;
+            this.TxtTarih.Properties.Appearance.Options.UseForeColor = true;
+            this.TxtTarih.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.TxtTarih.Properties.Mask.EditMask = "d";
+            this.TxtTarih.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
+            this.TxtTarih.Size = new System.Drawing.Size(100, 26);
+            this.TxtTarih.TabIndex = 59;
+            this.TxtTarih.Click += new System.EventHandler(this.TxtTarih_Click);
+            // 
+            // TxtSeriNo
+            // 
+            this.TxtSeriNo.EditValue = "Seri No";
+            this.TxtSeriNo.Location = new System.Drawing.Point(37, 110);
+            this.TxtSeriNo.Name = "TxtSeriNo";
+            this.TxtSeriNo.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.TxtSeriNo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtSeriNo.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.TxtSeriNo.Properties.Appearance.Options.UseBackColor = true;
+            this.TxtSeriNo.Properties.Appearance.Options.UseFont = true;
+            this.TxtSeriNo.Properties.Appearance.Options.UseForeColor = true;
+            this.TxtSeriNo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.TxtSeriNo.Properties.Mask.EditMask = "AAAAA";
+            this.TxtSeriNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            this.TxtSeriNo.Size = new System.Drawing.Size(100, 26);
+            this.TxtSeriNo.TabIndex = 59;
+            this.TxtSeriNo.Click += new System.EventHandler(this.TxtSeriNo_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(37, 135);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(250, 3);
+            this.panel1.TabIndex = 60;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(35, 245);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(250, 3);
+            this.panel2.TabIndex = 62;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Ürün Kabul",
+            "Parça Bekliyor",
+            "Mesaj Bekliyor",
+            "İptal Bekliyor",
+            "Fiyat Verildi"});
+            this.comboBox1.Location = new System.Drawing.Point(35, 219);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(252, 29);
+            this.comboBox1.TabIndex = 63;
+            // 
+            // BtnVazgec
+            // 
+            this.BtnVazgec.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnVazgec.ImageOptions.Image")));
+            this.BtnVazgec.Location = new System.Drawing.Point(208, 430);
+            this.BtnVazgec.Name = "BtnVazgec";
+            this.BtnVazgec.Size = new System.Drawing.Size(113, 37);
+            this.BtnVazgec.TabIndex = 64;
+            this.BtnVazgec.Text = "Vazgeç";
+            this.BtnVazgec.Click += new System.EventHandler(this.BtnVazgec_Click);
+            // 
             // FrmArizaDetaylar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(362, 450);
+            this.ClientSize = new System.Drawing.Size(362, 501);
+            this.Controls.Add(this.BtnVazgec);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.TxtSeriNo);
+            this.Controls.Add(this.TxtTarih);
             this.Controls.Add(this.pictureEdit8);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.Txttarih);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.TxtSerino);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnGuncelle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmArizaDetaylar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmArizaDetaylar";
-            ((System.ComponentModel.ISupportInitialize)(this.TxtSerino.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Txttarih.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.FrmArizaDetaylar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTarih.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSeriNo.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,12 +216,14 @@
 
         private DevExpress.XtraEditors.SimpleButton BtnGuncelle;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.TextEdit TxtSerino;
-        private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.TextEdit Txttarih;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit8;
+        private System.Windows.Forms.Panel panel5;
+        private DevExpress.XtraEditors.TextEdit TxtTarih;
+        private DevExpress.XtraEditors.TextEdit TxtSeriNo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private DevExpress.XtraEditors.SimpleButton BtnVazgec;
     }
 }

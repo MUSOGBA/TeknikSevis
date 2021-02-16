@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureEdit8 = new DevExpress.XtraEditors.PictureEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).BeginInit();
@@ -44,9 +45,9 @@
             // BtnQROlustur
             // 
             this.BtnQROlustur.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnQROlustur.ImageOptions.Image")));
-            this.BtnQROlustur.Location = new System.Drawing.Point(136, 147);
+            this.BtnQROlustur.Location = new System.Drawing.Point(120, 138);
             this.BtnQROlustur.Name = "BtnQROlustur";
-            this.BtnQROlustur.Size = new System.Drawing.Size(131, 29);
+            this.BtnQROlustur.Size = new System.Drawing.Size(161, 38);
             this.BtnQROlustur.TabIndex = 0;
             this.BtnQROlustur.Text = "QR OLUŞTUR";
             this.BtnQROlustur.Click += new System.EventHandler(this.BtnQROlustur_Click_1);
@@ -64,7 +65,7 @@
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(119, 182);
+            this.pictureEdit1.Location = new System.Drawing.Point(119, 225);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
@@ -118,12 +119,23 @@
             this.pictureEdit8.TabIndex = 25;
             this.pictureEdit8.Click += new System.EventHandler(this.pictureEdit8_Click);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(120, 183);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(161, 36);
+            this.simpleButton1.TabIndex = 26;
+            this.simpleButton1.Text = "VAZGEÇ";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // FrmQRCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(389, 370);
+            this.ClientSize = new System.Drawing.Size(389, 393);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.pictureEdit8);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textEdit1);
@@ -152,5 +164,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit8;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

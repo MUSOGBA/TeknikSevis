@@ -27,13 +27,47 @@ namespace TeknikSevis.Formlar
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
             TBLURUNTAKIP g = new TBLURUNTAKIP();
-            g.SERINO = TxtSerino.Text;
+            g.SERINO = TxtSeriNo.Text;
             g.ACIKLAMA = richTextBox1.Text;
-            g.TARIH = DateTime.Parse(Txttarih.Text);
+            g.TARIH = DateTime.Parse(TxtTarih.Text);
             db.TBLURUNTAKIP.Add(g);
+            db.SaveChanges();
+
+
+            TBLURUNKABUL g1 = new TBLURUNKABUL();
+            int urunid =int.Parse( id);
+            var deger = db.TBLURUNKABUL.Find(urunid);
+            deger.URUNDURUMDETAY = comboBox1.Text;
             db.SaveChanges();
             MessageBox.Show("Ürün Arıza Detayı Güncellendi");
 
+        }
+
+      
+
+        private void TxtTarih_Click(object sender, EventArgs e)
+        {
+            TxtTarih.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void TxtSeriNo_Click(object sender, EventArgs e)
+        {
+            TxtSeriNo.Text = "";
+        }
+
+        private void richTextBox1_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "";
+        }
+
+        private void BtnVazgec_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        public string id,serino;
+        private void FrmArizaDetaylar_Load(object sender, EventArgs e)
+        {
+            TxtSeriNo.Text = serino;
         }
     }
 }

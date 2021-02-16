@@ -30,7 +30,8 @@ namespace TeknikSevis.Formlar
                                PERSONEL = x.TBLPERSONEL.AD +" "+ x.TBLPERSONEL.SOYAD,
                                x.GELISTARIH,
                                x.CIKISTARIH,
-                               x.URUNSERINO
+                               x.URUNSERINO,
+                               x.URUNDURUMDETAY
                               
                            };
             gridControl1.DataSource = degerler.ToList();
@@ -53,6 +54,15 @@ namespace TeknikSevis.Formlar
                 chartControl1.Series["Series 1"].Points.AddPoint(Convert.ToString(dr[0]), int.Parse(dr[1].ToString()));
             }
             baglanti.Close();
+            
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            FrmArizaDetaylar fr = new FrmArizaDetaylar();
+            fr.serino = gridView1.GetFocusedRowCellValue("URUNSERINO").ToString();
+            fr.id = gridView1.GetFocusedRowCellValue("ISLEMID").ToString();
+            fr.Show();
             
         }
     }
