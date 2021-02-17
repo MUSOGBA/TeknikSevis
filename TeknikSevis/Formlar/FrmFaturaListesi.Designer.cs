@@ -161,6 +161,7 @@
             this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEdit2.Properties.DisplayMember = "ADI";
+            this.lookUpEdit2.Properties.NullText = "PERSONEL";
             this.lookUpEdit2.Properties.ValueMember = "ID";
             this.lookUpEdit2.Size = new System.Drawing.Size(164, 20);
             this.lookUpEdit2.TabIndex = 8;
@@ -180,6 +181,7 @@
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEdit1.Properties.DisplayMember = "ADI";
+            this.lookUpEdit1.Properties.NullText = "CARİ";
             this.lookUpEdit1.Properties.ValueMember = "ID";
             this.lookUpEdit1.Size = new System.Drawing.Size(164, 20);
             this.lookUpEdit1.TabIndex = 7;
@@ -261,6 +263,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // gridControl1
             // 
@@ -280,7 +283,7 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "FrmFaturaListesi";
-            this.Text = "FrmFaturaListesi";
+            this.Text = "Fatura Listesi";
             this.Load += new System.EventHandler(this.FrmFaturaListesi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TxtFaturaId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

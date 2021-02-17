@@ -34,10 +34,8 @@
             this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.TxtIlce = new DevExpress.XtraEditors.TextEdit();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
-            this.TxtIl = new DevExpress.XtraEditors.TextEdit();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.TxtTelefon = new DevExpress.XtraEditors.TextEdit();
@@ -71,11 +69,11 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit14 = new DevExpress.XtraEditors.PictureEdit();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpEdit2 = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtIlce.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtIl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTelefon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMail.Properties)).BeginInit();
@@ -98,6 +96,8 @@
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit14.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnVazgec
@@ -154,23 +154,8 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Location = new System.Drawing.Point(785, 115);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(265, 3);
+            this.panel6.Size = new System.Drawing.Size(247, 3);
             this.panel6.TabIndex = 36;
-            // 
-            // TxtIlce
-            // 
-            this.TxtIlce.EditValue = "İlçe";
-            this.TxtIlce.Location = new System.Drawing.Point(785, 90);
-            this.TxtIlce.Name = "TxtIlce";
-            this.TxtIlce.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.TxtIlce.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxtIlce.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.TxtIlce.Properties.Appearance.Options.UseBackColor = true;
-            this.TxtIlce.Properties.Appearance.Options.UseFont = true;
-            this.TxtIlce.Properties.Appearance.Options.UseForeColor = true;
-            this.TxtIlce.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.TxtIlce.Size = new System.Drawing.Size(100, 26);
-            this.TxtIlce.TabIndex = 6;
             // 
             // panel4
             // 
@@ -193,21 +178,6 @@
             this.pictureEdit6.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit6.Size = new System.Drawing.Size(32, 32);
             this.pictureEdit6.TabIndex = 35;
-            // 
-            // TxtIl
-            // 
-            this.TxtIl.EditValue = "İl";
-            this.TxtIl.Location = new System.Drawing.Point(418, 294);
-            this.TxtIl.Name = "TxtIl";
-            this.TxtIl.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.TxtIl.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxtIl.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.TxtIl.Properties.Appearance.Options.UseBackColor = true;
-            this.TxtIl.Properties.Appearance.Options.UseFont = true;
-            this.TxtIl.Properties.Appearance.Options.UseForeColor = true;
-            this.TxtIl.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.TxtIl.Size = new System.Drawing.Size(100, 26);
-            this.TxtIl.TabIndex = 5;
             // 
             // panel3
             // 
@@ -417,7 +387,7 @@
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Location = new System.Drawing.Point(785, 162);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(265, 3);
+            this.panel7.Size = new System.Drawing.Size(250, 3);
             this.panel7.TabIndex = 20;
             // 
             // TxtVergiDairesi
@@ -482,7 +452,7 @@
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Location = new System.Drawing.Point(785, 214);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(265, 3);
+            this.panel8.Size = new System.Drawing.Size(250, 3);
             this.panel8.TabIndex = 27;
             // 
             // pictureEdit13
@@ -519,7 +489,7 @@
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Location = new System.Drawing.Point(785, 319);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(265, 3);
+            this.panel9.Size = new System.Drawing.Size(250, 3);
             this.panel9.TabIndex = 34;
             // 
             // panel10
@@ -528,7 +498,7 @@
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Location = new System.Drawing.Point(785, 264);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(265, 3);
+            this.panel10.Size = new System.Drawing.Size(250, 3);
             this.panel10.TabIndex = 26;
             // 
             // TxtAdres
@@ -552,7 +522,7 @@
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel11.Location = new System.Drawing.Point(418, 367);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(630, 3);
+            this.panel11.Size = new System.Drawing.Size(620, 3);
             this.panel11.TabIndex = 33;
             // 
             // panel12
@@ -614,12 +584,51 @@
             this.pictureEdit14.TabIndex = 40;
             this.pictureEdit14.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureEdit14_MouseClick);
             // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(418, 294);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lookUpEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lookUpEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.DisplayMember = "sehir";
+            this.lookUpEdit1.Properties.NullText = "İL";
+            this.lookUpEdit1.Properties.ValueMember = "id";
+            this.lookUpEdit1.Size = new System.Drawing.Size(250, 28);
+            this.lookUpEdit1.TabIndex = 41;
+            this.lookUpEdit1.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
+            // 
+            // lookUpEdit2
+            // 
+            this.lookUpEdit2.Location = new System.Drawing.Point(785, 90);
+            this.lookUpEdit2.Name = "lookUpEdit2";
+            this.lookUpEdit2.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.lookUpEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lookUpEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lookUpEdit2.Properties.Appearance.Options.UseBackColor = true;
+            this.lookUpEdit2.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit2.Properties.Appearance.Options.UseForeColor = true;
+            this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit2.Properties.DisplayMember = "ilce";
+            this.lookUpEdit2.Properties.NullText = "İLÇE";
+            this.lookUpEdit2.Properties.ValueMember = "id";
+            this.lookUpEdit2.Size = new System.Drawing.Size(250, 28);
+            this.lookUpEdit2.TabIndex = 42;
+            // 
             // FrmCariEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1088, 478);
+            this.Controls.Add(this.lookUpEdit2);
+            this.Controls.Add(this.lookUpEdit1);
             this.Controls.Add(this.pictureEdit14);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.BtnVazgec);
@@ -627,12 +636,10 @@
             this.Controls.Add(this.textEdit7);
             this.Controls.Add(this.pictureEdit7);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.TxtIlce);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pictureEdit6);
             this.Controls.Add(this.TxtAdres);
-            this.Controls.Add(this.TxtIl);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel9);
@@ -663,11 +670,10 @@
             this.Name = "FrmCariEkle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCariEkle";
+            this.Load += new System.EventHandler(this.FrmCariEkle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtIlce.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtIl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTelefon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMail.Properties)).EndInit();
@@ -691,6 +697,8 @@
             this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit14.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -701,10 +709,8 @@
         private DevExpress.XtraEditors.TextEdit textEdit7;
         private DevExpress.XtraEditors.PictureEdit pictureEdit7;
         private System.Windows.Forms.Panel panel6;
-        private DevExpress.XtraEditors.TextEdit TxtIlce;
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraEditors.PictureEdit pictureEdit6;
-        private DevExpress.XtraEditors.TextEdit TxtIl;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private DevExpress.XtraEditors.TextEdit TxtTelefon;
@@ -738,5 +744,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit14;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit2;
     }
 }

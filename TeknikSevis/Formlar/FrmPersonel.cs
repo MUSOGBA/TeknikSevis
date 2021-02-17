@@ -26,12 +26,19 @@ namespace TeknikSevis.Formlar
                                x.ID,
                                x.AD,
                                x.SOYAD,
-                               x.DEPARTMAN,
+                               DEPARTMAN=x.TBLDEPARTMAN.AD,
                                x.FOTOGRAF,
                                x.MAIL,
                                x.TELEFON,
                            };
             gridControl1.DataSource = degerler.ToList();
+
+            lookUpEdit1.Properties.DataSource = (from x in db.TBLDEPARTMAN
+                                                 select new
+                                                 {
+                                                     x.ID,
+                                                     x.AD,
+                                                 }).ToList();
 
         }
 
@@ -39,12 +46,7 @@ namespace TeknikSevis.Formlar
         {
             metot();
 
-            lookUpEdit1.Properties.DataSource = (from x in db.TBLDEPARTMAN
-                                                select new
-                                                {
-                                                    x.ID,
-                                                    x.AD,
-                                                }).ToList();
+            
 
             string ad1, soyad1;
             ad1 = db.TBLPERSONEL.First(x => x.ID == 1).AD;
@@ -78,16 +80,25 @@ namespace TeknikSevis.Formlar
 
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            TBLPERSONEL k = new TBLPERSONEL();
-            k.AD = TxtAdi.Text.ToUpper() ;
-            k.SOYAD = TxtSoyadi.Text.ToUpper();
-            k.DEPARTMAN = byte.Parse(lookUpEdit1.EditValue.ToString());
-            k.FOTOGRAF = TxtFotograf.Text.ToUpper();
-            k.MAIL = TxtMail.Text.ToUpper();
-            k.TELEFON = TxtTelefon.Text.ToUpper();
-            db.TBLPERSONEL.Add(k);
-            db.SaveChanges();
-            MessageBox.Show("Personel Ekleme İşlemi Başarılı","BİLGİ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            try
+            {
+                TBLPERSONEL k = new TBLPERSONEL();
+                k.AD = TxtAdi.Text.ToUpper();
+                k.SOYAD = TxtSoyadi.Text.ToUpper();
+                k.DEPARTMAN = byte.Parse(lookUpEdit1.EditValue.ToString());
+                k.FOTOGRAF = TxtFotograf.Text.ToUpper();
+                k.MAIL = TxtMail.Text.ToUpper();
+                k.TELEFON = TxtTelefon.Text.ToUpper();
+                db.TBLPERSONEL.Add(k);
+                db.SaveChanges();
+                MessageBox.Show("Personel Ekleme İşlemi Başarılı", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                metot();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Personel Ekleme İşlemi İçin Gerekli Yerleri Doldurunuz!", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
 
         }
 
@@ -103,6 +114,7 @@ namespace TeknikSevis.Formlar
             db.TBLPERSONEL.Remove(deger);
             db.SaveChanges();
             MessageBox.Show("Personel Silme İşlemi Başarılı","BİLGİ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            metot();
         }
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
@@ -117,14 +129,16 @@ namespace TeknikSevis.Formlar
             deger.TELEFON = TxtTelefon.Text;
             db.SaveChanges();
             MessageBox.Show("Personel GÜncelleme İşlemi Başarılı", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            metot();
         }
 
         private void BtnTemizle_Click(object sender, EventArgs e)
         {
+            TxtPersonelId.Text = "";
             TxtAdi.Text = "";
             TxtSoyadi.Text = "";
             TxtFotograf.Text = "";
-            lookUpEdit1.EditValue = "";
+            lookUpEdit1.Text = "DEPARTMAN".ToString();
             TxtMail.Text = "";
             TxtTelefon.Text = "";
         }
@@ -134,7 +148,7 @@ namespace TeknikSevis.Formlar
             TxtPersonelId.Text =gridView1.GetFocusedRowCellValue("ID").ToString();
             TxtAdi.Text = gridView1.GetFocusedRowCellValue("AD").ToString();
             TxtSoyadi.Text = gridView1.GetFocusedRowCellValue("SOYAD").ToString();
-           // lookUpEdit1 = gridView1.GetFocusedRowCellValue("DEPARTMAN").ToString();
+            lookUpEdit1.Text = gridView1.GetFocusedRowCellValue("DEPARTMAN").ToString();
           //  TxtFotograf.Text = gridView1.GetFocusedRowCellValue("FOTOGRAF").ToString();
            TxtMail.Text = gridView1.GetFocusedRowCellValue("MAIL").ToString();
            // TxtTelefon.Text = gridView1.GetFocusedRowCellValue("TELEFON").ToString();

@@ -46,6 +46,8 @@
             this.TxtAdi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.TxtMail = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.TxtAdres = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.TxtStatü = new DevExpress.XtraEditors.TextEdit();
@@ -55,7 +57,7 @@
             this.TxtBanka = new DevExpress.XtraEditors.TextEdit();
             this.TxtVDairesi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.lookUpEdit3 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpEdit2 = new DevExpress.XtraEditors.LookUpEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -72,23 +74,21 @@
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.TxtMail = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCariId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTelefon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSoyadi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtMail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAdres.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtStatü.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtVergiNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtBanka.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtVDairesi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -99,8 +99,6 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtMail.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnTemizle
@@ -261,7 +259,7 @@
             this.groupControl1.Controls.Add(this.BtnGuncelle);
             this.groupControl1.Controls.Add(this.BtnSil);
             this.groupControl1.Controls.Add(this.BtnKaydet);
-            this.groupControl1.Controls.Add(this.lookUpEdit3);
+            this.groupControl1.Controls.Add(this.lookUpEdit1);
             this.groupControl1.Controls.Add(this.lookUpEdit2);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.labelControl4);
@@ -277,6 +275,22 @@
             this.groupControl1.Size = new System.Drawing.Size(348, 778);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "CARİ İŞLEMLERİ";
+            // 
+            // TxtMail
+            // 
+            this.TxtMail.Location = new System.Drawing.Point(124, 159);
+            this.TxtMail.Name = "TxtMail";
+            this.TxtMail.Properties.Mask.EditMask = "xxxxx@xxxx.com";
+            this.TxtMail.Size = new System.Drawing.Size(164, 20);
+            this.TxtMail.TabIndex = 5;
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Location = new System.Drawing.Point(87, 162);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(31, 13);
+            this.labelControl20.TabIndex = 28;
+            this.labelControl20.Text = "MAİL :";
             // 
             // TxtAdres
             // 
@@ -345,16 +359,17 @@
             this.labelControl10.TabIndex = 22;
             this.labelControl10.Text = "V. DAİRESİ :";
             // 
-            // lookUpEdit3
+            // lookUpEdit1
             // 
-            this.lookUpEdit3.Location = new System.Drawing.Point(124, 185);
-            this.lookUpEdit3.Name = "lookUpEdit3";
-            this.lookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lookUpEdit1.Location = new System.Drawing.Point(124, 185);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit3.Properties.DisplayMember = "AD";
-            this.lookUpEdit3.Properties.ValueMember = "ID";
-            this.lookUpEdit3.Size = new System.Drawing.Size(164, 20);
-            this.lookUpEdit3.TabIndex = 6;
+            this.lookUpEdit1.Properties.DisplayMember = "sehir";
+            this.lookUpEdit1.Properties.ValueMember = "id";
+            this.lookUpEdit1.Size = new System.Drawing.Size(164, 20);
+            this.lookUpEdit1.TabIndex = 6;
+            this.lookUpEdit1.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
             // 
             // lookUpEdit2
             // 
@@ -362,8 +377,8 @@
             this.lookUpEdit2.Name = "lookUpEdit2";
             this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit2.Properties.DisplayMember = "AD";
-            this.lookUpEdit2.Properties.ValueMember = "ID";
+            this.lookUpEdit2.Properties.DisplayMember = "ilce";
+            this.lookUpEdit2.Properties.ValueMember = "id";
             this.lookUpEdit2.Size = new System.Drawing.Size(164, 20);
             this.lookUpEdit2.TabIndex = 7;
             // 
@@ -481,9 +496,9 @@
             this.labelControl15.Appearance.Options.UseForeColor = true;
             this.labelControl15.Location = new System.Drawing.Point(27, 30);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(88, 17);
+            this.labelControl15.Size = new System.Drawing.Size(103, 17);
             this.labelControl15.TabIndex = 0;
-            this.labelControl15.Text = "Aktif Cari Sayısı";
+            this.labelControl15.Text = "Toplam İlçe Sayısı";
             // 
             // panel3
             // 
@@ -536,7 +551,6 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(108)))), ((int)(((byte)(240)))));
-            this.panel4.Controls.Add(this.pictureEdit4);
             this.panel4.Controls.Add(this.labelControl18);
             this.panel4.Controls.Add(this.labelControl19);
             this.panel4.Location = new System.Drawing.Point(682, 3);
@@ -544,28 +558,15 @@
             this.panel4.Size = new System.Drawing.Size(223, 141);
             this.panel4.TabIndex = 5;
             // 
-            // pictureEdit4
-            // 
-            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
-            this.pictureEdit4.Location = new System.Drawing.Point(139, 62);
-            this.pictureEdit4.Name = "pictureEdit4";
-            this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit4.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit4.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit4.Size = new System.Drawing.Size(45, 45);
-            this.pictureEdit4.TabIndex = 2;
-            // 
             // labelControl18
             // 
-            this.labelControl18.Appearance.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl18.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl18.Appearance.Options.UseFont = true;
             this.labelControl18.Appearance.Options.UseForeColor = true;
-            this.labelControl18.Location = new System.Drawing.Point(27, 62);
+            this.labelControl18.Location = new System.Drawing.Point(27, 68);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(54, 45);
+            this.labelControl18.Size = new System.Drawing.Size(48, 37);
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "584";
             // 
@@ -581,23 +582,6 @@
             this.labelControl19.TabIndex = 0;
             this.labelControl19.Text = "En Fazla Carili İl";
             // 
-            // TxtMail
-            // 
-            this.TxtMail.Location = new System.Drawing.Point(124, 159);
-            this.TxtMail.Name = "TxtMail";
-            this.TxtMail.Properties.Mask.EditMask = "(999) 000-0000";
-            this.TxtMail.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
-            this.TxtMail.Size = new System.Drawing.Size(164, 20);
-            this.TxtMail.TabIndex = 5;
-            // 
-            // labelControl20
-            // 
-            this.labelControl20.Location = new System.Drawing.Point(87, 162);
-            this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(31, 13);
-            this.labelControl20.TabIndex = 28;
-            this.labelControl20.Text = "MAİL :";
-            // 
             // FrmCariListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -610,7 +594,7 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "FrmCariListesi";
-            this.Text = "FrmCariLİstesi";
+            this.Text = "Cari Listesi";
             this.Load += new System.EventHandler(this.FrmCariListesi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TxtCariId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTelefon.Properties)).EndInit();
@@ -619,12 +603,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtMail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAdres.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtStatü.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtVergiNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtBanka.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtVDairesi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -639,8 +624,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtMail.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -673,7 +656,7 @@
         private DevExpress.XtraEditors.TextEdit TxtBanka;
         private DevExpress.XtraEditors.TextEdit TxtVDairesi;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit3;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
         private DevExpress.XtraEditors.LookUpEdit lookUpEdit2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -690,7 +673,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private System.Windows.Forms.Panel panel4;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit4;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.TextEdit TxtMail;

@@ -12,10 +12,12 @@ namespace TeknikSevis
     using System;
     using System.Collections.Generic;
     
-    public partial class TBLIL
+    public partial class TBLILCELER
     {
-        public int ID { get; set; }
-        public string IL { get; set; }
-        public string ILCE { get; set; }
+        public int id { get; set; }
+        public string ilce { get; set; }
+        public int sehir { get; set; }
+    
+        public virtual TBLILLER TBLILLER { get; set; }
     }
 }

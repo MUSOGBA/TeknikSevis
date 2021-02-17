@@ -21,9 +21,9 @@ namespace TeknikSevis.Formlar
 
         void temizle()
         {
-            TxtUrunId.Text = "Ürün ID";
-            TxtMusteri.Text = "Müşteri";
-            TxtPersonel.Text = "Personel";
+            LkpId.Text = "Ürün ID";
+            LkpMusteri.Text = "Müşteri";
+            LkpMusteri.Text = "Personel";
             TxtTarih.Text = "TArih";
             TxtAdet.Text = "Adet";
             TxtSatisFiyati.Text = "Satış Fiyatı";
@@ -43,19 +43,47 @@ namespace TeknikSevis.Formlar
         private void BtnSatisYap_Click(object sender, EventArgs e)
         {
             TBLURUNHAREKET k = new TBLURUNHAREKET();
-            k.URUN = int.Parse(TxtUrunId.Text);
-            k.MUSTERI = int.Parse(TxtMusteri.Text);
-            k.PERSONEL = short.Parse(TxtPersonel.Text);
-            k.TARIH =DateTime.Parse( TxtTarih.Text);
+            k.URUN = int.Parse(LkpId.EditValue.ToString());
+            k.MUSTERI = int.Parse(LkpMusteri.EditValue.ToString());
+            k.PERSONEL = short.Parse(LkpPersonel.EditValue.ToString());
+            k.TARIH = DateTime.Parse(TxtTarih.Text);
             k.ADET = short.Parse(TxtAdet.Text);
             k.FIYAT = decimal.Parse(TxtSatisFiyati.Text);
             k.URUNSERINO = TxtSeriNo.Text;
             db.TBLURUNHAREKET.Add(k);
             db.SaveChanges();
-            MessageBox.Show("Satış İşlemi Başarılı","BİLGİ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("Satış İşlemi Başarılı", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             temizle();
 
 
         }
+
+        private void FrmUrunSatis_Load(object sender, EventArgs e)
+        {
+            LkpId.Properties.DataSource = (from x in db.TBLURUN
+                                           select new
+                                           {
+                                               x.ID,
+                                               x.AD,
+                                           }).ToList();
+
+            LkpMusteri.Properties.DataSource = (from x in db.TBLCARI
+                                                select new
+                                                {
+                                                    x.ID,
+                                                    AD = x.AD + " " + x.SOYAD
+
+                                                }).ToList();
+
+            LkpPersonel.Properties.DataSource = (from x in db.TBLPERSONEL
+                                                select new
+                                                {
+                                                    x.ID,
+                                                    AD = x.AD + " " + x.SOYAD
+
+                                                }).ToList();
+        }
+
+       
     }
 }

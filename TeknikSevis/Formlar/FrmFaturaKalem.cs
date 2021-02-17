@@ -19,33 +19,48 @@ namespace TeknikSevis.Formlar
 
         DbTeknikServisEntities db = new DbTeknikServisEntities();
 
+        void listele()
+        {
+            var deger = from x in db.TBLFATURADETAY
+                        select new
+                        {
+                            x.FATURADETAYID,
+                            x.URUN,
+                            x.ADET,
+                            x.FIYAT,
+                            x.TUTAR,
+                            x.FATURAID
+                        };
+            gridControl1.DataSource = deger.ToList();
+        }
+
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            TBLFATURADETAY k = new TBLFATURADETAY();
-            k.URUN = TxtUrun.Text;
-            k.ADET = short.Parse(TxtAdet.Text);
-            k.FIYAT = decimal.Parse(TxtFiyat.Text);
-            k.TUTAR = (k.ADET * k.FIYAT);
-            k.FATURAID =int.Parse( TxtFaturaId.Text);
-            db.TBLFATURADETAY.Add(k);
-            db.SaveChanges();
-            MessageBox.Show("Kalem Kayıt İşlemi Başarılı","BİLGİ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            try
+            {
+                TBLFATURADETAY k = new TBLFATURADETAY();
+                k.URUN = TxtUrun.Text;
+                k.ADET = short.Parse(TxtAdet.Text);
+                k.FIYAT = decimal.Parse(TxtFiyat.Text);
+                k.TUTAR = (k.ADET * k.FIYAT);
+                k.FATURAID = int.Parse(TxtFaturaId.Text);
+                db.TBLFATURADETAY.Add(k);
+                db.SaveChanges();
+                MessageBox.Show("Kalem Kayıt İşlemi Başarılı", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                listele();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Kalem Kayıt İşlemi İçin Gerekli Yerleri Doldurunuz!", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
 
         }
 
         private void FrmFaturaKalem_Load(object sender, EventArgs e)
         {
-            var deger = from x in db.TBLFATURADETAY
-                         select new
-                         {
-                             x.FATURADETAYID,
-                             x.URUN,
-                             x.ADET,
-                             x.FIYAT,
-                             x.TUTAR,
-                             x.FATURAID
-                         };
-            gridControl1.DataSource = deger.ToList();
+            listele();
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -70,17 +85,7 @@ namespace TeknikSevis.Formlar
 
         private void BtnListele_Click(object sender, EventArgs e)
         {
-            var deger = from x in db.TBLFATURADETAY
-                        select new
-                        {
-                            x.FATURADETAYID,
-                            x.URUN,
-                            x.ADET,
-                            x.FIYAT,
-                            x.TUTAR,
-                            x.FATURAID
-                        };
-            gridControl1.DataSource = deger.ToList();
+            listele();
         }
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
@@ -94,6 +99,7 @@ namespace TeknikSevis.Formlar
             deger.FATURAID =int.Parse( TxtFaturaId.Text);
             db.SaveChanges();
             MessageBox.Show("Kalem Güncelleme İşlemi Başarılı", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            listele();
 
         }
 
@@ -104,6 +110,7 @@ namespace TeknikSevis.Formlar
             db.TBLFATURADETAY.Remove(deger);
             db.SaveChanges();
             MessageBox.Show("Kalem Silme İşlemi Başarılı", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            listele();
         }
     }
 }

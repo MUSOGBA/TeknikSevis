@@ -346,5 +346,36 @@ namespace TeknikSevis
                 fr29.Show();
             }
         }
+        İletişim.FrmRehber fr30;
+        private void BtnRehber_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (fr30==null||fr30.IsDisposed)
+            {
+                fr30 = new İletişim.FrmRehber();
+                fr30.MdiParent = this;
+                fr30.Show();
+            }
+           
+        }
+        İletişim.FrmGelenMesajlar fr31;
+        private void BtnGelenMesajlar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (fr31==null||fr31.IsDisposed)
+            {
+                fr31 = new İletişim.FrmGelenMesajlar();
+                fr31.MdiParent = this;
+                fr31.Show();
+            }
+        }
+        İletişim.FrmMail fr32;
+        private void BtnYeniMail_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (fr32==null||fr32.IsDisposed)
+            {
+                fr32 = new İletişim.FrmMail();
+                
+                fr32.Show();
+            }
+        }
     }
 }

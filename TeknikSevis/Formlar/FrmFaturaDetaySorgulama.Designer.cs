@@ -146,7 +146,7 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "FrmFaturaDetaySorgulama";
-            this.Text = "FrmFaturaDetaylıSorgulama";
+            this.Text = "Fatura Detaylı Sorgulama";
             this.Load += new System.EventHandler(this.FrmFaturaDetay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

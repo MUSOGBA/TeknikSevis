@@ -40,7 +40,9 @@
             this.BtnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.TxtTarih = new DevExpress.XtraEditors.TextEdit();
             this.Txtİcerik = new DevExpress.XtraEditors.TextEdit();
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.TxtBaslik = new DevExpress.XtraEditors.TextEdit();
@@ -55,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTarih.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Txtİcerik.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtBaslik.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
@@ -160,7 +163,9 @@
             this.groupControl1.Controls.Add(this.BtnGuncelle);
             this.groupControl1.Controls.Add(this.BtnSil);
             this.groupControl1.Controls.Add(this.BtnKaydet);
+            this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl2);
+            this.groupControl1.Controls.Add(this.TxtTarih);
             this.groupControl1.Controls.Add(this.Txtİcerik);
             this.groupControl1.Controls.Add(this.labelControl28);
             this.groupControl1.Controls.Add(this.TxtBaslik);
@@ -173,11 +178,19 @@
             // 
             // checkEdit1
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(127, 197);
+            this.checkEdit1.Location = new System.Drawing.Point(128, 232);
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "Okundu Olarak İşaretle";
             this.checkEdit1.Size = new System.Drawing.Size(163, 20);
             this.checkEdit1.TabIndex = 4;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(78, 199);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(38, 13);
+            this.labelControl3.TabIndex = 6;
+            this.labelControl3.Text = "TARİH :";
             // 
             // labelControl2
             // 
@@ -186,6 +199,15 @@
             this.labelControl2.Size = new System.Drawing.Size(41, 13);
             this.labelControl2.TabIndex = 6;
             this.labelControl2.Text = "İÇERİK :";
+            // 
+            // TxtTarih
+            // 
+            this.TxtTarih.Location = new System.Drawing.Point(126, 196);
+            this.TxtTarih.Name = "TxtTarih";
+            this.TxtTarih.Properties.Mask.EditMask = "d";
+            this.TxtTarih.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
+            this.TxtTarih.Size = new System.Drawing.Size(164, 20);
+            this.TxtTarih.TabIndex = 4;
             // 
             // Txtİcerik
             // 
@@ -196,7 +218,7 @@
             // 
             // labelControl28
             // 
-            this.labelControl28.Location = new System.Drawing.Point(78, 201);
+            this.labelControl28.Location = new System.Drawing.Point(79, 236);
             this.labelControl28.Name = "labelControl28";
             this.labelControl28.Size = new System.Drawing.Size(43, 13);
             this.labelControl28.TabIndex = 4;
@@ -270,7 +292,7 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.groupControl1);
             this.Name = "FrmNotlar";
-            this.Text = "FrmNotlar";
+            this.Text = "Not Ekranı";
             this.Load += new System.EventHandler(this.FrmNotlar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -279,6 +301,7 @@
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTarih.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Txtİcerik.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtBaslik.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
@@ -310,5 +333,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit TxtTarih;
     }
 }

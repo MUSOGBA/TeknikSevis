@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.mapControl1 = new DevExpress.XtraMap.MapControl();
-            this.bingMapDataProvider1 = new DevExpress.XtraMap.BingMapDataProvider();
             this.ımageLayer1 = new DevExpress.XtraMap.ImageLayer();
+            this.bingMapDataProvider1 = new DevExpress.XtraMap.BingMapDataProvider();
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,10 +42,10 @@
             this.mapControl1.Name = "mapControl1";
             this.mapControl1.Size = new System.Drawing.Size(1264, 781);
             this.mapControl1.TabIndex = 0;
+            this.ımageLayer1.DataProvider = this.bingMapDataProvider1;
             this.bingMapDataProvider1.BingKey = "SCiXmigRcEiNtXTj668Y~qz85LdG9TGJ6gtyIP5emag~Ar2-EgISkSZzsbyBc-EbYttNxRBZA40GFYpVq" +
     "uYmfC3pMzsnDN0DXAj4LDg-sp_c";
             this.bingMapDataProvider1.Kind = DevExpress.XtraMap.BingMapKind.Area;
-            this.ımageLayer1.DataProvider = this.bingMapDataProvider1;
             // 
             // FrmHaritalar
             // 
@@ -54,7 +54,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 781);
             this.Controls.Add(this.mapControl1);
             this.Name = "FrmHaritalar";
-            this.Text = "FrmHaritalar";
+            this.Text = "Haritalar";
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).EndInit();
             this.ResumeLayout(false);
 

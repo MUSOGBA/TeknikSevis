@@ -88,7 +88,7 @@
             this.Controls.Add(this.chartControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "FrmCariIller";
-            this.Text = "FrmCariIller";
+            this.Text = "Cariler ";
             this.Load += new System.EventHandler(this.FrmCariIller_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

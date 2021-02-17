@@ -19,12 +19,17 @@ namespace TeknikSevis.Formlar
 
         DbTeknikServisEntities db = new DbTeknikServisEntities();
 
+        void listele()
+        {
+            gridControl1.DataSource = db.TBLNOTLARIM.Where(x => x.DURUM == false).ToList();
+            gridControl2.DataSource = db.TBLNOTLARIM.Where(y => y.DURUM == true).ToList();
+        }
+
         private void FrmNotlar_Load(object sender, EventArgs e)
         {
 
-            gridControl1.DataSource = db.TBLNOTLARIM.Where(x => x.DURUM == false).ToList();
-            gridControl2.DataSource = db.TBLNOTLARIM.Where(y => y.DURUM == true).ToList();
 
+            listele();
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -32,6 +37,7 @@ namespace TeknikSevis.Formlar
             TxtNotId.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
             TxtBaslik.Text = gridView1.GetFocusedRowCellValue("BASLIK").ToString();
             Txtİcerik.Text = gridView1.GetFocusedRowCellValue("ICERIK").ToString();
+            TxtTarih.Text = gridView1.GetFocusedRowCellValue("TARIH").ToString();
 
         }
 
@@ -44,13 +50,23 @@ namespace TeknikSevis.Formlar
 
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            TBLNOTLARIM k = new TBLNOTLARIM();
-            k.BASLIK = TxtBaslik.Text.ToUpper();
-            k.ICERIK = Txtİcerik.Text.ToUpper();
-            k.DURUM = false;
-            db.TBLNOTLARIM.Add(k);
-            db.SaveChanges();
-            MessageBox.Show("Not Kayıt İşlemi BAşarılı", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                TBLNOTLARIM k = new TBLNOTLARIM();
+                k.BASLIK = TxtBaslik.Text.ToUpper();
+                k.ICERIK = Txtİcerik.Text.ToUpper();
+                k.DURUM = false;
+                k.TARIH = DateTime.Parse(TxtTarih.Text);
+                db.TBLNOTLARIM.Add(k);
+                db.SaveChanges();
+                MessageBox.Show("Not Kayıt İşlemi Başarılı", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                listele();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Not Kayıt İşlemi İçin Alanları Doldurunuz!", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
 
         }
 
@@ -64,8 +80,7 @@ namespace TeknikSevis.Formlar
 
         private void BtnListele_Click(object sender, EventArgs e)
         {
-            gridControl1.DataSource = db.TBLNOTLARIM.Where(x => x.DURUM == false).ToList();
-            gridControl2.DataSource = db.TBLNOTLARIM.Where(y => y.DURUM == true).ToList();
+            listele();
         }
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
@@ -79,6 +94,7 @@ namespace TeknikSevis.Formlar
                 deger.ICERIK = Txtİcerik.Text;
                 db.SaveChanges();
                 MessageBox.Show("Not Durumu Değiştirildi", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                listele();
             }
         }
 
@@ -89,6 +105,7 @@ namespace TeknikSevis.Formlar
             db.TBLNOTLARIM.Remove(deger);
             db.SaveChanges();
             MessageBox.Show("Not Silme İşlemi Başarılı","BİLGİ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            listele();
         }
     }
 

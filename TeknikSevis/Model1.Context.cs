@@ -35,7 +35,6 @@ namespace TeknikSevis
         public virtual DbSet<TBLFATURABILGI> TBLFATURABILGI { get; set; }
         public virtual DbSet<TBLFATURADETAY> TBLFATURADETAY { get; set; }
         public virtual DbSet<TBLGIDER> TBLGIDER { get; set; }
-        public virtual DbSet<TBLIL> TBLIL { get; set; }
         public virtual DbSet<TBLKATEGORI> TBLKATEGORI { get; set; }
         public virtual DbSet<TBLNOTLARIM> TBLNOTLARIM { get; set; }
         public virtual DbSet<TBLPERSONEL> TBLPERSONEL { get; set; }
@@ -45,6 +44,8 @@ namespace TeknikSevis
         public virtual DbSet<TBLURUNTAKIP> TBLURUNTAKIP { get; set; }
         public virtual DbSet<TBLHAKKIMIZDA> TBLHAKKIMIZDA { get; set; }
         public virtual DbSet<TBLILETISIM> TBLILETISIM { get; set; }
+        public virtual DbSet<TBLILCELER> TBLILCELER { get; set; }
+        public virtual DbSet<TBLILLER> TBLILLER { get; set; }
     
         public virtual ObjectResult<urunkategori_Result> urunkategori()
         {
@@ -59,6 +60,21 @@ namespace TeknikSevis
         public virtual ObjectResult<string> maksmarka()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("maksmarka");
+        }
+    
+        public virtual ObjectResult<string> maksil()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("maksil");
+        }
+    
+        public virtual ObjectResult<string> maksdepartman()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("maksdepartman");
+        }
+    
+        public virtual ObjectResult<string> mindepartman()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("mindepartman");
         }
     }
 }

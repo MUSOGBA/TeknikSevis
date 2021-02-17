@@ -25,7 +25,7 @@ namespace TeknikSevis.Formlar
             TxtUrunAdi.Text = "";
             TxtMarka.Text = "";
             TxtAlisFiyat.Text = "";
-            TxtSatisFiyat.Text= "";
+            TxtSatisFiyat.Text = "";
             lookUpEdit1.EditValue = " ";
             TxtStok.Text = "";
         }
@@ -45,6 +45,14 @@ namespace TeknikSevis.Formlar
 
                            };
             gridControl1.DataSource = degerler.ToList();
+            lookUpEdit1.Properties.DataSource = (from x in db.TBLKATEGORI
+                                                 select new
+                                                 {
+                                                     x.ID,
+                                                     x.AD,
+                                                 }).ToList();
+
+            
         }
 
         private void FrmUrunListesi_Load(object sender, EventArgs e)
@@ -52,29 +60,33 @@ namespace TeknikSevis.Formlar
             // Listele ToList Add Remove
 
             metot1();
-            lookUpEdit1.Properties.DataSource = (from x in db.TBLKATEGORI
-                                                select new
-                                                {
-                                                    x.ID,
-                                                    x.AD,
-                                                }).ToList();
 
-           
+
+
         }
 
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            TBLURUN t = new TBLURUN();
-            t.AD = TxtUrunAdi.Text.ToUpper();
-            t.MARKA = TxtMarka.Text;
-            t.ALISFIYAT = decimal.Parse(TxtAlisFiyat.Text.ToUpper());
-            t.SATISFIYAT = decimal.Parse(TxtSatisFiyat.Text.ToUpper());
-            t.STOK = short.Parse(TxtStok.Text.ToUpper());
-            t.DURUM = false;
-            t.KATEGORI = byte.Parse(lookUpEdit1.EditValue.ToString().ToUpper());
-            db.TBLURUN.Add(t);
-            db.SaveChanges();
-            MessageBox.Show("Ürün ekleme İşleminiz Başarıyla Gerçekleştirilmiştir","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            try
+            {
+                TBLURUN t = new TBLURUN();
+                t.AD = TxtUrunAdi.Text.ToUpper();
+                t.MARKA = TxtMarka.Text;
+                t.ALISFIYAT = decimal.Parse(TxtAlisFiyat.Text.ToUpper());
+                t.SATISFIYAT = decimal.Parse(TxtSatisFiyat.Text.ToUpper());
+                t.STOK = short.Parse(TxtStok.Text.ToUpper());
+                t.DURUM = false;
+                t.KATEGORI = byte.Parse(lookUpEdit1.EditValue.ToString().ToUpper());
+                db.TBLURUN.Add(t);
+                db.SaveChanges();
+                MessageBox.Show("Ürün ekleme İşleminiz Başarıyla Gerçekleştirilmiştir", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                metot1();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ürün ekleme İşleminiz İçin Gerekli Yerleri Doldurunuz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+         
 
         }
 
@@ -82,7 +94,7 @@ namespace TeknikSevis.Formlar
         {
 
             metot1();
-            lookUpEdit1.Properties.DataSource = db.TBLKATEGORI.ToList();
+           
 
         }
 
@@ -101,10 +113,10 @@ namespace TeknikSevis.Formlar
             catch (Exception)
             {
 
-                MessageBox.Show("HATA","BİLGİ",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("HATA", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-                }
+
+        }
 
         private void BtnSil_Click(object sender, EventArgs e)
         {
@@ -112,7 +124,8 @@ namespace TeknikSevis.Formlar
             var deger = db.TBLURUN.Find(id);
             db.TBLURUN.Remove(deger);
             db.SaveChanges();
-            MessageBox.Show("Ürün silme işlemi başarılı","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Stop);  
+            MessageBox.Show("Ürün silme işlemi başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            metot1();
         }
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
@@ -127,6 +140,7 @@ namespace TeknikSevis.Formlar
             deger.KATEGORI = byte.Parse(lookUpEdit1.EditValue.ToString());
             db.SaveChanges();
             MessageBox.Show("Ürün güncelleme işlemi başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            metot1();
         }
 
         private void BtnTemizle_Click(object sender, EventArgs e)

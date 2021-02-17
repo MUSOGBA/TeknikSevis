@@ -30,13 +30,16 @@ namespace TeknikSevis.Formlar
 
                            };
             gridControl1.DataSource = degerler.ToList();
+            labelControl12.Text = db.TBLDEPARTMAN.Count().ToString();
+            labelControl14.Text = db.TBLPERSONEL.Count().ToString();
+            labelControl16.Text = db.maksdepartman().FirstOrDefault();
+            labelControl18.Text = db.mindepartman().FirstOrDefault();
         }
 
         private void FrmDepartman_Load(object sender, EventArgs e)
         {
             metot();
-            labelControl12.Text = db.TBLDEPARTMAN.Count().ToString();
-            labelControl14.Text = db.TBLPERSONEL.Count().ToString();
+           
         }
 
         private void BtnListele_Click(object sender, EventArgs e)
@@ -48,18 +51,21 @@ namespace TeknikSevis.Formlar
         {
             TBLDEPARTMAN k = new TBLDEPARTMAN();
 
-            if (TxtAdi.Text.Length <= 50 && TxtAdi.Text!=null && RchAcıklama.Text.Length >=1)
+            try
             {
                 k.AD = TxtAdi.Text.ToUpper(); ;
                 k.ACIKLAMA = RchAcıklama.Text.ToUpper();
                 db.TBLDEPARTMAN.Add(k);
                 db.SaveChanges();
                 MessageBox.Show("Deparman Kayıt İşleminiz Başarılı", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                metot();
             }
-            else 
+            catch (Exception)
             {
+
                 MessageBox.Show(" Departman Adını Düzenleyin", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+           
           
            
             
@@ -72,6 +78,7 @@ namespace TeknikSevis.Formlar
             db.TBLDEPARTMAN.Remove(deger);
             db.SaveChanges();
             MessageBox.Show("Departman Silme İşleminiz Başarılı","BİLGİ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            metot();
         }
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
@@ -82,6 +89,7 @@ namespace TeknikSevis.Formlar
             deger.ACIKLAMA = RchAcıklama.Text;
             db.SaveChanges();
             MessageBox.Show("Güncelleme İşleminiz Başarılı","BİLGİ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            metot();
         }
 
         private void BtnTemizle_Click(object sender, EventArgs e)

@@ -409,7 +409,7 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "FrmKategoriListesi";
-            this.Text = "FrmKategori";
+            this.Text = "Kategoriler";
             this.Load += new System.EventHandler(this.FrmKategori_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TxtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtKategoriAdi.Properties)).EndInit();

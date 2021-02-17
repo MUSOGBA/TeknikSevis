@@ -283,7 +283,7 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "FrmUrunListesi";
-            this.Text = "FrmUrunListesi";
+            this.Text = "Ürün Listesi";
             this.Load += new System.EventHandler(this.FrmUrunListesi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

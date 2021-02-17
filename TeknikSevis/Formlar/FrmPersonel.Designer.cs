@@ -221,6 +221,7 @@
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEdit1.Properties.DisplayMember = "AD";
+            this.lookUpEdit1.Properties.NullText = "DEPARTMAN";
             this.lookUpEdit1.Properties.ValueMember = "ID";
             this.lookUpEdit1.Size = new System.Drawing.Size(163, 20);
             this.lookUpEdit1.TabIndex = 22;
@@ -728,7 +729,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gridControl1);
             this.Name = "FrmPersonel";
-            this.Text = "FrmPersonel";
+            this.Text = "Personeller";
             this.Load += new System.EventHandler(this.FrmPersonel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TxtPersonelId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

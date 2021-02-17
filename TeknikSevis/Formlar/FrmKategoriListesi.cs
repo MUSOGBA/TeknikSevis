@@ -44,18 +44,20 @@ namespace TeknikSevis.Formlar
 
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            if (TxtKategoriAdi.Text != "" && TxtKategoriAdi.Text.Length <= 30)
+            try
             {
                 TBLKATEGORI k = new TBLKATEGORI();
                 k.AD = TxtKategoriAdi.Text.ToUpper();
                 db.TBLKATEGORI.Add(k);
                 db.SaveChanges();
                 MessageBox.Show("Kategori kayıt işlemi başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                metot1();
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Kategori Adı Boş ve Belirlenen Karakter Sayısından Fazla", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Kategori Adı Boş ve Belirlenen Karakter Sayısından Fazla", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
 
         private void BtnListele_Click(object sender, EventArgs e)
@@ -85,6 +87,7 @@ namespace TeknikSevis.Formlar
                 db.TBLKATEGORI.Remove(deger);
                 db.SaveChanges();
                 MessageBox.Show("Kategori Silme İşlemi Başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                metot1();
             }
             else
             {
@@ -102,6 +105,7 @@ namespace TeknikSevis.Formlar
             deger.AD = TxtKategoriAdi.Text.ToUpper();
             db.SaveChanges();
             MessageBox.Show("Kategori Güncelleme İşlemi Başarılı","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
-           }
+            metot1();
+        }
     }
 }

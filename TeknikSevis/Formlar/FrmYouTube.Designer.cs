@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 781);
             this.Controls.Add(this.webBrowser1);
             this.Name = "FrmYouTube";
-            this.Text = "FrmYouTube";
+            this.Text = "YouTube";
             this.Load += new System.EventHandler(this.FrmYouTube_Load);
             this.ResumeLayout(false);
 
